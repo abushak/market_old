@@ -1,0 +1,13 @@
+services:
+  custom_breadcrumb.breadcrumb.nodes:
+    class: Drupal\custom_breadcrumb\Breadcrumb\CustomNodeBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 1000 }
+  custom_breadcrumb.breadcrumb.views:
+    class: Drupal\custom_breadcrumb\Breadcrumb\CustomViewBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 1000 }
+  custom_breadcrumb.breadcrumb.contact_form:
+    class: Drupal\custom_breadcrumb\Breadcrumb\CustomContactFormBreadcrumbBuilder
+    tags:
+      - { name: breadcrumb_builder, priority: 1000 }

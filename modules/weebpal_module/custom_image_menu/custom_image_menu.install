@@ -1,0 +1,39 @@
+<?php
+
+function custom_image_menu_schema() {
+    $schema['image_menu'] = array(
+        'description' => 'This table stores links of image for each menu item.',
+        'fields' => array(
+            'id' => array(
+                'description' => 'The menu item id.',
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+                'default' => 0,
+            ),
+            'image_link' => array(
+                'description' => 'The menu item id.',
+                'type' => 'varchar',
+                'length' => 2048,
+                'not null' => FALSE,
+                'default' => '',
+            ),
+            'fid' => array(
+                'description' => 'The fid of image file.',
+                'type' => 'int',
+                'unsigned' => TRUE,
+                'not null' => FALSE,
+                'default' => 0,
+            ),
+        ),
+        'primary key' => array('id'),
+        'foreign keys' => array(
+            'fk_image_menu' => array(
+                'table' => 'menu_link_content_data',
+                'columns' => array('id' => 'id'),
+            ),
+        ),
+    );
+
+    return $schema;
+}

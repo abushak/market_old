@@ -1,0 +1,106 @@
+/*------------------------------------------------------------------*/
+/* Typography */
+
+body {
+	background: $white;
+	color: $body-color;
+	font: {
+		family: $font-body;
+		size: $body-fs;
+	};
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 15px;
+    line-height: 1.4;
+}
+
+h1, h2, h1#page-title {
+    font-size: $fs-22;
+    color: $black;
+}
+
+h3 {
+    font-size: $fs-18;
+    color: $black;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: $blue;
+    @include effect;
+    &:hover, &:focus{
+        color: $link-color;
+        text-decoration: none;
+        outline: none;
+    }
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+address {}
+
+label, .label {
+    color: $body-color;
+	font-weight: normal;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+button, input, optgroup, select, textarea {
+    max-width: 100%;
+}
+
+.form-text, .form-search{
+    border: 1px solid gainsboro;
+    padding: 5px 10px;
+    max-width: 100%;
+}
+
+.form-submit {
+    @include btn-default;
+}
+
+.form-email, .form-text, .form-select, .form-textarea {
+    padding: 5px 10px;
+    border: 1px solid $border-color;
+    max-width: 100%;
+    &:focus {
+        border-color: #9b9b9b;
+    }
+}
+
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+    border: 1px solid #f44f4f;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-top: 0;
+    border: 1px solid $border-color;
+    color: #7a7979;
+}
+
+iframe {
+	max-width: 100%;
+	border: none;
+}
+
+legend {
+    padding-bottom: 5px;
+}
+
+fieldset {
+    min-height: 30px;
+}

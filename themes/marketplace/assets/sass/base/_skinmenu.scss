@@ -1,0 +1,185 @@
+/* skin menu */
+.change-skin-menu-wrapper {
+    position: fixed;
+    left: -188px;
+    top: 150px;
+    z-index: 500;
+    background-color: #fafafa;
+    box-shadow: 1px 1px 2px -1px #888;
+    -webkit-box-shadow: 1px 1px 2px -1px #888;
+    border-radius: 0 0 3px 0;
+    -webkit-border-radius: 0 0 3px 0;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+
+    .container {
+        width: 185px;
+        padding: 10px;
+    }
+
+    .background,
+    .skin-color {
+        overflow: hidden;
+    }
+
+    .skin-color {
+        margin-bottom: 15px;
+    }
+
+    /* tag a */
+    .change-skin {
+        line-height: 1.6;
+        text-align: center;
+        border-radius: 0 5px 5px 0;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background-color: #fafafa;
+        padding: 10px;
+        width: 41px;
+        height: 41px;
+        box-shadow: 1px 1px 2px -2px #888;
+        -webkit-box-shadow: 1px 1px 2px -2px #888;
+        color: #666;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+
+        &:hover, &:focus {
+            color: #333;
+        }
+
+        i {
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+
+    strong {
+        margin-bottom: 10px;
+        display: block;
+        font-weight: 600;
+    }
+
+    /* color */
+    ul {
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    li {
+        list-style: none;
+        display: inline-block;
+        float: left;
+        margin: {
+            right: 3px;
+            bottom: 3px;
+        };
+    }
+
+    .change-skin-button,
+    .change-background-button {
+        display: inline-block;
+        text-indent: -999em;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        opacity: 0.7;
+        -webkit-transition: all 0.3s ease-in;
+        -moz-transition: all 0.3s ease-in;
+        -ms-transition: all 0.3s ease-in;
+        -o-transition: all 0.3s ease-in;
+        transition: all 0.3s ease-in;
+
+        &:hover, &:focus {
+            opacity: 1;
+        }
+    }
+
+    /*background*/
+    .change-background-button {
+        border: 1px solid #cdcdcd;
+
+        &:hover, &:focus {
+            border-color: #7b7b7b;
+        }
+    }
+
+    /*layout*/
+    .layout {
+        margin-bottom: 15px;
+    }
+
+    .change-layout-button {
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        padding: 5px 18px 3px;
+        background-color: #fff;
+        background-image: none;
+
+        &:hover, &:focus {}
+
+
+    }
+
+    .change-layout-button.active {
+        background-color: #428bca;
+        color: #fff;
+        border-color: #428bca;
+        &:first-child {
+            border-right: none;
+        }
+    }
+
+    /* direction */
+    .change-direction {
+        li {
+            margin-left: 0;
+            margin-right: 0;
+
+            a {
+                display: block;
+                padding: 5px 16px 3px;
+                color: #333;
+                border: 1px solid #ccc;
+                box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 1px rgba(0, 0, 0, 0.075);
+                -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 1px rgba(0, 0, 0, 0.075);
+                line-height: 1.42857;
+                font-size: 14px;
+
+                &:hover, &:focus {
+                    border-color: #adadad;
+                }
+            }
+        }
+
+        .active {
+            a {
+                background-color: #428bca;
+                color: #fff;
+                box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+                -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+                border-color: #428bca;
+
+                &:hover, &:focus {
+                    border-color: #428bca;
+                }
+            }
+        }
+    }
+}
+
+.fly-out {
+    left: 0;
+}
+
+/* RTL Skinmenu */
+[dir="rtl"] {
+    .change-skin-menu-wrapper li {
+        float: right;
+        margin-right: auto;
+        margin-left: 3px;
+    }
+    .change-direction li{
+        margin-left: 0;
+    }
+}

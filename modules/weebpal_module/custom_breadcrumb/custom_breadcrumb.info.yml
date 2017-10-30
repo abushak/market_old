@@ -1,0 +1,6 @@
+name: Custom Breadcrumb
+description: This is custom breadcrumb.
+package: Weebpal
+type: module
+version: VERSION
+core: '8.x'

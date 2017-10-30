@@ -1,0 +1,6 @@
+name: Custom Image Menu
+description: This menu add image field to menu items.
+package: Weebpal
+type: module
+version: VERSION
+core: '8.x'

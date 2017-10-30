@@ -1,0 +1,93 @@
+<?php
+
+function custom_image_menu_form_menu_link_content_menu_link_content_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    //$config = new config('image_menu.settings');
+    $form['menu_image'] = array(
+        '#title' => t('Image'),
+        '#type' => 'managed_file',
+        '#description' => t('The uploaded image will be displayed on this page using the image style choosen below.'),
+        //'#default_value' => $config->get('menu_image'),
+        '#upload_location' => 'public://menu_images/',
+    );
+    $form['actions']['submit']['#submit'][] = '_insert_menu_image';
+
+    $current_path = \Drupal::service('path.current')->getPath();
+    if (strpos($current_path, 'edit')) {
+        $menu_item_id = explode('/', $current_path)[5];
+
+        $query = db_select('image_menu', 'e')
+            ->fields('e', array('id', 'fid', 'image_link'))
+            ->condition('id', $menu_item_id)
+            ->execute()->fetchAll();
+        if (count($query) > 0) {
+            $fid = $query[0]->fid;
+            $file = file_load($fid);
+            $uri = $query[0]->image_link;
+            $url = file_create_url($uri);
+            $form['menu_image']['#default_value'] = $fid;
+            //$form['menu_image']['#prefix'] = '<a href="' . $url . '">' . $file->getFilename() . '</a>';
+            //$url = file_create_url($uri);
+            //$form['menu_image']['#path'] = $url;
+            //$fid = $query[0]->fid;
+            //$image = image_load($uri);
+            //dsm($image);
+        }
+    }
+
+    //dsm($form);
+}
+
+function _insert_menu_image(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+    $image_file = array_values($form['menu_image']['#files'])[0];
+    $menu_image_url = $image_file->uri->value;
+    $fid = $image_file->fid->value;
+    $old_fid = $form['menu_image']['#default_value'];
+
+    if ($fid != old_fid) {
+        dsm('dasjdhasjkdsa');
+    }
+
+    $current_path = \Drupal::service('path.current')->getPath();
+    if (strpos($current_path, 'edit')) {
+        $menu_item_id = explode('/', $current_path)[5];
+        $query = db_select('image_menu', 'e')
+            ->fields('e', array('id'))
+            ->condition('id', $menu_item_id)
+            ->execute()->fetchAll();
+        if (count($query) > 0) {
+            db_update('image_menu')
+                ->condition('id', $menu_item_id)
+                ->fields(array(
+                    'image_link' => $menu_image_url,
+                    'fid' => $fid,
+                ))
+                ->execute();
+        } else {
+            db_insert('image_menu')
+                ->fields(array(
+                    'id' => $menu_item_id,
+                    'image_link' => $menu_image_url,
+                    'fid' => $fid,
+                ))
+                ->execute();
+        }
+    } else {
+        if (isset($menu_image_url)) {
+            $lastest_menu_item = db_select('menu_link_content_data', 'e')
+                ->orderBy('id', 'DESC')
+                ->fields('e', array('id'))
+                ->execute()
+                ->fetch(NULL, NULL, 0);
+            db_insert('image_menu')
+                ->fields(array(
+                    'id' => $lastest_menu_item->id,
+                    'image_link' => $menu_image_url,
+                    'fid' => $fid,
+                ))
+                ->execute();
+        }
+    }
+
+    $form_state->setRebuild(true);
+    //dsm($image_file);
+}

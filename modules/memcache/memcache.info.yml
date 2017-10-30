@@ -1,0 +1,11 @@
+name: Memcache
+description: 'High performance integration with memcache.'
+type: module
+package: 'Performance and scalability'
+# core: 8.x
+
+# Information added by Drupal.org packaging script on 2015-05-07
+version: '8.x-2.x-dev'
+core: '8.x'
+project: 'memcache'
+datestamp: 1430987886

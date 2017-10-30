@@ -1,0 +1,70 @@
+/* tabs primary */
+.tabs.primary {
+    margin: 0 0 20px;
+    padding: 0;
+    border: none;
+    white-space: normal;
+    li {
+        display: inline-block;
+        margin-bottom: 7px;
+        margin-right: 3px;
+        &:last-child {
+            margin-right: 0;
+        }
+        a {
+            border: 1px solid $border-color;
+            padding: 10px 20px;
+            background-color: $white;
+            color: $black;
+            display: inline-block;
+            line-height: 1;
+            margin-right: 0;
+            &:hover, &:focus {
+                border-bottom: 1px solid $border-color;
+                background-color: $very-light-gray;
+                color: $black;
+            }
+        }
+        &.is-active a {
+            border-color: $border-color;
+            background-color: $link-color;
+            color: $white;
+        }
+    }
+}
+
+///
+// Back to top
+//
+// => Scroll web to top
+
+.btn-btt {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    width: 30px;
+    height: 30px;
+    text-indent: 999em;
+    background-color: #000;
+    opacity: 0.5;
+    color: $white;
+    &:before {
+        @include nucleo_glyph;
+        content: '\eb38';
+        text-indent: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        line-height: 29px;
+        color: #fff;
+        text-align: center;
+        font-size: 18px;
+    }
+    &:hover, &:focus {
+        opacity: 1;
+    }
+}

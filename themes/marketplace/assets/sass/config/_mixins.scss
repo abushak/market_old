@@ -1,0 +1,128 @@
+@mixin clearfix {
+    &:before, &:after {
+        display: table;
+        content: " ";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin effect{
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+@mixin transition($time) {
+    -webkit-transition: $time;
+    -moz-transition: $time;
+    -o-transition: $time;
+    transition: $time;
+}
+
+/* Translate */
+@mixin translate($val...) {
+    -webkit-transform: translate($val);
+    -moz-transform: translate($val);
+    -ms-transform: translate($val);
+    -o-transform: translate($val);
+    transform: translate($val);
+}
+
+@mixin text-shadow {
+    -webkit-text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
+    -moz-text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+@mixin border-radius($number) {
+    border-radius: $number;
+    -webkit-border-radius: $number;
+}
+
+@mixin box-shadow($val) {
+    box-shadow: $val;
+    -webkit-box-shadow: $val;
+    -moz-box-shadow: $val;
+}
+
+@mixin nucleo_outline {
+    display: inline-block;
+    font-family: "Nucleo Outline";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin nucleo_mini {
+    display: inline-block;
+    font-family: "Nucleo Mini";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin nucleo_glyph {
+    display: inline-block;
+    font-family: "Nucleo Glyph";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin sprites {
+    background: url("../images/sprites.png");
+    background-repeat: no-repeat;
+}
+
+@mixin btn-default {
+    display: inline-block;
+    cursor: pointer;
+    line-height: 1;
+    background-color: $blue;
+    color: $white;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    @include effect;
+    @include border-radius(3px);
+    &:hover, &:focus{
+        background-color: $link-color;
+    }
+}
+
+@mixin popup {
+    box-shadow: 0 0 6px 0 #c1c1c1;
+    -webkit-box-shadow: 0 0 6px 0 #c1c1c1;
+    border: 1px solid $border-color;
+    @include border-radius(3px);
+    padding: 20px 10px;
+    background-color: $white;
+    &:before{
+        position: absolute;
+        content: "";
+        border-width: 11px 10px;
+        border-style: solid;
+        border-color: transparent transparent $white transparent;
+        right: 17px;
+        top: -21px;
+        z-index: 4;
+    }
+    &:after{
+        position: absolute;
+        content: "";
+        border-width: 11px 10px;
+        border-style: solid;
+        border-color: transparent transparent $line-color transparent;
+        right: 17px;
+        top: -21px;
+        z-index: 1;
+    }
+}

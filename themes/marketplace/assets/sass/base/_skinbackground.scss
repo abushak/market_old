@@ -1,0 +1,75 @@
+/* background skin */
+.change-skin-menu-wrapper {
+    .bg-default a {
+        background-color: #fff;
+    }
+
+    .bg-black a {
+        background-color: #000;
+    }
+
+    .bg-1 a {
+        background: url(../images/skins-menu/bg-1.png) 0 0 repeat;
+    }
+
+    .bg-2 a {
+        background: url(../images/skins-menu/bg-2.png) 0 0 repeat;
+    }
+
+    .bg-3 a {
+        background: url(../images/skins-menu/bg-3.png) 0 0 repeat;
+    }
+
+    .bg-4 a {
+        background: url(../images/skins-menu/bg-4.png) 0 0 repeat;
+    }
+
+    .bg-5 a {
+        background: url(../images/skins-menu/bg-5.png) 0 0 repeat;
+    }
+
+    .bg-6 a {
+        background: url(../images/skins-menu/bg-6.png) 0 0 repeat;
+    }
+
+    .bg-7 a {
+        background: url(../images/skins-menu/bg-7.png) 0 0 repeat;
+    }
+}
+
+/* change background */
+@mixin change_bg($bg) {
+    background: url("../images/skins-menu/#{$bg}.png") 0 0 repeat;
+}
+
+.bg-1 {
+    @include change_bg(bg-1);
+}
+
+.bg-2 {
+    @include change_bg(bg-2);
+}
+
+.bg-3 {
+    @include change_bg(bg-3);
+}
+
+.bg-4 {
+    @include change_bg(bg-4);
+}
+
+.bg-5 {
+    @include change_bg(bg-5);
+}
+
+.bg-6 {
+    @include change_bg(bg-6);
+}
+
+.bg-7 {
+    @include change_bg(bg-7);
+}
+
+.bg-default {
+    background-color: #fff;
+}

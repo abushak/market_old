@@ -1,0 +1,39 @@
+name: Marketplace
+type: theme
+base theme: classy
+description: 'Marketplace theme.'
+package: Core
+# version: VERSION
+# core: 8.x
+libraries:
+  - marketplace/global-styling
+  - marketplace/corescript
+regions:
+  headline: 'Headline'
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted_first: Highlighted first
+  highlighted_second: Highlighted second
+  highlighted_third: Highlighted third
+  featured_top: 'Featured top'
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  panel_first: 'Panel first'
+  panel_second: 'Panel second'
+  panel_third: 'Panel third'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_fourth: 'Footer fourth'
+  footer: 'Footer'
+
+# Information added by Drupal.org packaging script on 2015-11-04
+version: '8.x'
+core: '8.x'
+project: 'drupal'
+datestamp: 1446633477

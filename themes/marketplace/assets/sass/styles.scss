@@ -1,0 +1,33 @@
+/*------------------------------------------------------------------
+CSS
+-------------------------------------------------------------------*/
+@import url(../includes/bootstrap/css/bootstrap.min.css);
+@import url(../includes/chosen/chosen.min.css);
+
+// Fonts
+@import url(../includes/fonts/nucleo/outline/css/nucleo-outline.css);
+@import url(../includes/fonts/nucleo/mini/css/nucleo-mini.css);
+@import url(../includes/fonts/nucleo/glyph/css/nucleo-glyph.css);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic);
+
+// Core variables and mixins
+@import "config/variables";
+@import "config/mixins";
+
+// Skins
+@import "base/skincolor";
+@import "base/skinbackground";
+@import "base/skinmenu";
+
+// Base
+@import "base/base";
+@import "base/elements";
+@import "base/header";
+@import "base/footer";
+
+// Partials
+@import "partials/view";
+@import "partials/block";
+@import "partials/page";
+@import "partials/responsive";
+@import "partials/print";

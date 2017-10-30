@@ -1,0 +1,313 @@
+.block-views-blockslideshow-block-1 {
+  .slideshow {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  .flex-control-paging {
+    bottom: 15px;
+    left: 30px;
+    text-align: left;
+    position: absolute;
+    padding: 0;
+    font-size: 0;
+    li {
+      display: inline-block;
+      list-style: none;
+      margin: 0 3px 0 0;
+      a {
+        @include box-shadow(0 0 3px #c5c5c5 inset);
+        @include border-radius(50%);
+        background-color: $white;
+        border: 1px solid $white;
+        cursor: pointer;
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        &.flex-active {
+          @include box-shadow(0 0 1px $white inset);
+          background-color: $link-color;
+          border-color: $link-color;
+        }
+      }
+    }
+  }
+}
+
+/******/
+.block-views-blockbrands-block-1 {
+  .views-row {
+    @include clearfix;
+    margin: 0 -7px;
+    float: none;
+    width: auto;
+  }
+  .views-col {
+    padding: 0 7px;
+    img {
+      display: block;
+      border: 1px solid $border-color;
+      &:hover, &:focus {
+        border-color: #b7b7b7;
+      }
+    }
+  }
+}
+
+/* sidebar */
+.block-views-blockproduct-ads-block-1, .block-views-blockproduct-ads-block-2 {
+  img {
+    display: block;
+    border: 1px solid $border-color;
+    &:hover, &:focus {
+      border-color: #b7b7b7;
+    }
+  }
+  .views-row {
+    margin-bottom: 15px;
+  }
+}
+
+/* view-products */
+.view-products, .view-frontpage, .products-list {
+  position: relative;
+  .views-view-grid {
+    .views-row {
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .views-col {
+      border: 1px solid transparent;
+      padding: 15px;
+      &:hover {
+        border-color: $border-color;
+      }
+    }
+  }
+  .views-field-field-images {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .views-field-title {
+    color: $black;
+    margin-bottom: 10px;
+    min-height: 40px;
+    a {
+      color: $black;
+      &:hover, &:focus {
+        color: $link-color;
+      }
+    }
+  }
+  .views-field-field-brands {
+    color: #828282;
+    font-size: $fs-13;
+    margin-bottom: 10px;
+    a {
+      color: #828282;
+      &:hover, &:focus {
+        color: $link-color;
+      }
+    }
+  }
+  .views-field-field-old-price {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    text-decoration: line-through;
+  }
+  .views-field-field-discount-percentage {
+    color: $link-color;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  .views-field-field-price {
+    color: $link-color;
+    margin-bottom: 5px;
+  }
+}
+
+.sidebar .view-products {
+  .views-row {
+    margin-bottom: 20px;
+    padding-left: 95px;
+    position: relative;
+  }
+  .views-field-field-images {
+    width: 80px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .views-field-title {
+    min-height: 0;
+  }
+}
+
+/* end view-products */
+
+/* view-ads */
+.view-ads {
+  .views-row {
+    margin-bottom: 15px;
+  }
+  .views-field-field-image {
+    img {
+      border: 1px solid $border-color;
+      display: block;
+      &:hover {
+        border-color: #b7b7b7;
+      }
+    }
+  }
+}
+
+/* end view-ads */
+
+/* recently-view-items */
+.recently-view-items {
+  .views-view-grid {
+    margin: 0 -5px;
+    .views-col {
+      border: none;
+      padding: 0 5px;
+      margin-bottom: 10px;
+    }
+  }
+  .view-content {
+    @include clearfix;
+  }
+  .views-row {
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  .views-field-field-images {
+    margin-bottom: 0;
+    img {
+      border: 1px solid #f5f5f5;
+      &:hover, &:focus {
+        border-color: $border-color;
+      }
+    }
+  }
+}
+
+/* end recently-view-items */
+
+/* carousel */
+.products-recommend {
+  .owl-item {
+    //padding-left: 10px;
+    //padding-right: 10px;
+  }
+  .views-row {
+    background-color: white;
+    border: 1px solid white;
+    min-height: 390px;
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    @include transition(0.3s);
+    &:hover, &:focus{
+      border-color: #dcdcdc;
+    }
+  }
+  .owl-buttons{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: -50px;
+  }
+  .owl-prev, .owl-next{
+    @include border-radius(3px);
+    background: $white;
+    border: 1px solid #b1b1b1;
+    color: $body-color;
+    font-size: 0;
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    &:before {
+      @include nucleo_outline;
+      content: '\eaf6';
+      font-size: 18px;
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+      width: 25px;
+    }
+    &:hover, &:focus {
+      background: $link-color;
+      border-color: $link-color;
+      color: $white;
+    }
+  }
+  .owl-next{
+    margin-left: 5px;
+    &:before{
+      content: '\eaf7';
+    }
+  }
+}
+
+/* end carousel */
+
+.shopping-cart {
+  table {
+    width: 100%;
+    border: 1px solid $border-color;
+    margin-bottom: 15px;
+    th {
+      border-bottom: 1px solid $border-color;
+      padding: 12px 15px;
+      background-color: $very-light-gray;
+      font-weight: 700;
+      color: $black;
+    }
+    thead {
+      border-bottom: 1px solid $border-color;
+      th {
+        border-bottom: none;
+        border-right: 1px solid $border-color;
+        &:first-child.select-all {
+          width: 45px;
+          input[type="radio"], input[type="checkbox"] {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    tbody {
+      border-top: none;
+      tr {
+        border-bottom: 1px solid $border-color;
+        background-color: $white;
+        .form-item {
+          white-space: normal;
+        }
+        td {
+          border-bottom: 0;
+          padding: 12px 15px;
+          border-right: 1px solid $border-color;
+          color: $black;
+          font-weight: 500;
+          background-color: $white;
+          &:first-child {
+            .form-checkbox {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+    .field {
+      margin-bottom: 0;
+    }
+  }
+}
